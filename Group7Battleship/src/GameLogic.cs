@@ -1,4 +1,3 @@
-
 using Microsoft.VisualBasic;
 using System;
 using System.Collections;
@@ -6,8 +5,12 @@ using System.Collections.Generic;
 //using System.Data;
 using System.Diagnostics;
 using SwinGameSDK;
+
 static class GameLogic
 {
+
+    
+
 	public static void Main()
 	{
 		//Opens a new Graphics Window
@@ -18,11 +21,26 @@ static class GameLogic
 
 		SwinGame.PlayMusic(GameResources.GameMusic("Background"));
 
-		//Game Loop
-		do {
+        //Game Loop
+        do {
 			GameController.HandleUserInput();
 			GameController.DrawScreen();
-		} while (!(SwinGame.WindowCloseRequested() == true | GameController.CurrentState == GameState.Quitting));
+
+            //Mute the game when key M is pressed
+
+            if (SwinGame.KeyTyped(KeyCode.vk_m))
+            {
+                SwinGame.PauseMusic();
+            }
+            
+            //Unmute the game when the key N is pressed
+            if (SwinGame.KeyTyped(KeyCode.vk_n))
+            {
+                SwinGame.ResumeMusic();
+            }
+  
+
+        } while (!(SwinGame.WindowCloseRequested() == true | GameController.CurrentState == GameState.Quitting));
 
 		SwinGame.StopMusic();
 
