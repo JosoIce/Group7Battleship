@@ -190,7 +190,16 @@ static class HighScoreController
 				SwinGame.RefreshScreen();
 			}
 
-			s.Name = SwinGame.TextReadAsASCII();
+			string tempName = SwinGame.TextReadAsASCII();
+
+            if (tempName.Length < 3)
+            {
+                s.Name = tempName;
+            }
+            else
+            {
+                s.Name = tempName.Substring(0, 3);
+            }
 
 			if (s.Name.Length < 3) {
 				s.Name = s.Name + new string(Convert.ToChar(" "), 3 - s.Name.Length);
