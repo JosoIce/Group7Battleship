@@ -18,29 +18,31 @@ static class GameLogic
 
 		//Load Resources
 		GameResources.LoadResources();
-        Random random = new Random();
-        int musicSelector = random.Next(1, 5);
 
-        if (musicSelector == 1)
-        {
-            SwinGame.PlayMusic(GameResources.GameMusic("Background1"));
+        SwinGame.PlayMusic(GameResources.GameMusic("Background1"));
+        //Random random = new Random();
+        //int musicSelector = random.Next(1, 5);
 
-        }
-        else if (musicSelector == 2)
-        {
-            SwinGame.PlayMusic(GameResources.GameMusic("Background2"));
+        //if (musicSelector == 1)
+        //{
+        //    SwinGame.PlayMusic(GameResources.GameMusic("Background1"));
 
-        }
-        else if (musicSelector == 3)
-        {
-            SwinGame.PlayMusic(GameResources.GameMusic("Background3"));
+        //}
+        //else if (musicSelector == 2)
+        //{
+        //    SwinGame.PlayMusic(GameResources.GameMusic("Background2"));
 
-        }
-        else if (musicSelector == 4)
-        {
-            SwinGame.PlayMusic(GameResources.GameMusic("Background4"));
+        //}
+        //else if (musicSelector == 3)
+        //{
+        //    SwinGame.PlayMusic(GameResources.GameMusic("Background3"));
 
-        }
+        //}
+        //else if (musicSelector == 4)
+        //{
+        //    SwinGame.PlayMusic(GameResources.GameMusic("Background4"));
+
+        //}
 
 
         //Game Loop
